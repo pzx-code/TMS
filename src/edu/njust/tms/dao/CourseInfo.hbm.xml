@@ -1,0 +1,29 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="edu.njust.tms.dao">
+ <class name="CourseInfo" table="t_CourseInfo">
+  <!-- 主键课程编号 -->
+  <id length="20" name="courseNumber" type="string">
+   <generator class="assigned"/>
+  </id>
+  <!-- 简单字符串属性: 课程名称 -->
+  <property column="courseName" generated="never" lazy="false"
+   length="20" name="courseName" type="string"/>
+  <!-- 多对一属性: 上课老师 -->
+  <many-to-one cascade="save-update" class="Teacher"
+   column="courseTeacher" lazy="false" name="courseTeacher" outer-join="true"/>
+  <!-- 简单字符串属性: 上课时间 -->
+  <property column="courseTime" generated="never" lazy="false"
+   length="40" name="courseTime" type="string"/>
+  <!-- 简单字符串属性: 上课地点 -->
+  <property column="coursePlace" generated="never" lazy="false"
+   length="40" name="coursePlace" type="string"/>
+  <!-- 简单浮点型属性: 课程学分 -->
+  <property column="courseScore" generated="never" lazy="false"
+   name="courseScore" type="float"/>
+  <!-- 简单字符串属性: 附加信息 -->
+  <property column="courseMemo" generated="never" lazy="false"
+   length="100" name="courseMemo" type="string"/>
+ </class>
+</hibernate-mapping>

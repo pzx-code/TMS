@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="edu.njust.tms.dao">
+ <class name="StudentSelectCourseInfo" table="t_StudentSelectCourseInfo">
+  <!-- 主键记录编号 -->
+  <id column="selectId" name="selectId">
+   <generator class="native"/>
+  </id>
+  <!-- 多对一属性: 学生对象 -->
+  <many-to-one cascade="save-update" class="Student"
+   column="studentNumber" lazy="false" name="studentNumber" outer-join="true"/>
+  <!-- 多对一属性: 课程对象 -->
+  <many-to-one cascade="save-update" class="CourseInfo"
+   column="courseNumber" lazy="false" name="courseNumber" outer-join="true"/>
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="edu.njust.tms.dao">
+ <class name="SpecialFieldInfo" table="t_SpecialFieldInfo">
+  <!-- 主键专业编号 -->
+  <id length="20" name="specialFieldNumber" type="string">
+   <generator class="assigned"/>
+  </id>
+  <!-- 简单字符串属性: 专业名称 -->
+  <property column="specialFieldName" generated="never" lazy="false"
+   length="20" name="specialFieldName" type="string"/>
+  <!-- 多对一属性: 所在学院 -->
+  <many-to-one cascade="save-update" class="CollegeInfo"
+   column="specialCollegeNumber" lazy="false"
+   name="specialCollegeNumber" outer-join="true"/>
+  <!-- 简单日期型属性: 成立日期 -->
+  <property column="specialBirthDate" generated="never" lazy="false"
+   length="10" name="specialBirthDate" type="string"/>
+  <!-- 简单字符串属性: 联系人 -->
+  <property column="specialMan" generated="never" lazy="false"
+   length="10" name="specialMan" type="string"/>
+  <!-- 简单字符串属性: 联系电话 -->
+  <property column="specialTelephone" generated="never" lazy="false"
+   length="20" name="specialTelephone" type="string"/>
+  <!-- 简单字符串属性: 附加信息 -->
+  <property column="specialMemo" generated="never" lazy="false"
+   length="100" name="specialMemo" type="string"/>
+ </class>
+</hibernate-mapping>

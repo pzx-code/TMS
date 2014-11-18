@@ -1,0 +1,47 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="edu.njust.tms.dao">
+ <class name="Student" table="t_Student">
+  <!-- 主键学号 -->
+  <id length="20" name="studentNumber" type="string">
+   <generator class="assigned"/>
+  </id>
+  <!-- 简单字符串属性: 姓名 -->
+  <property column="studentName" generated="never" lazy="false"
+   length="12" name="studentName" type="string"/>
+  <!-- 简单字符串属性: 登录密码 -->
+  <property column="studentPassword" generated="never" lazy="false"
+   length="30" name="studentPassword" type="string"/>
+  <!-- 简单字符串属性: 性别 -->
+  <property column="studentSex" generated="never" lazy="false"
+   length="2" name="studentSex" type="string"/>
+  <!-- 多对一属性: 所在班级 -->
+  <many-to-one cascade="save-update" class="ClassInfo"
+   column="studentClassNumber" lazy="false" name="studentClassNumber" outer-join="true"/>
+  <!-- 简单日期型属性: 出生日期 -->
+  <property column="studentBirthday" generated="never" lazy="false"
+   length="10" name="studentBirthday" type="string"/>
+  <!-- 简单字符串属性: 政治面貌 -->
+  <property column="studentState" generated="never" lazy="false"
+   length="20" name="studentState" type="string"/>
+  <!-- 简单图片属性: 学生照片 -->
+  <property column="studentPhoto" generated="never" lazy="false"
+   length="50" name="studentPhoto" type="string"/>
+  <!-- 简单字符串属性: 联系电话 -->
+  <property column="studentTelephone" generated="never" lazy="false"
+   length="20" name="studentTelephone" type="string"/>
+  <!-- 简单字符串属性: 学生邮箱 -->
+  <property column="studentEmail" generated="never" lazy="false"
+   length="30" name="studentEmail" type="string"/>
+  <!-- 简单字符串属性: 联系qq -->
+  <property column="studentQQ" generated="never" lazy="false"
+   length="20" name="studentQQ" type="string"/>
+  <!-- 简单字符串属性: 家庭地址 -->
+  <property column="studentAddress" generated="never" lazy="false"
+   length="100" name="studentAddress" type="string"/>
+  <!-- 简单字符串属性: 附加信息 -->
+  <property column="studentMemo" generated="never" lazy="false"
+   length="100" name="studentMemo" type="string"/>
+ </class>
+</hibernate-mapping>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+           http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/context
+           http://www.springframework.org/schema/context/spring-context-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd">
+	<!-- <context:component-scan base-package="edu.njust.tms.action"/>  -->
+    <bean id="loginAction" class="edu.njust.tms.action.LoginAction" scope="prototype"></bean>
+    <bean id="changePasswordAction" class="edu.njust.tms.action.ChangePasswordAction" scope="prototype"></bean>
+    <bean id="userAction" class="edu.njust.tms.action.UserAction" scope="prototype"></bean>  
+    
+	
+    <bean id="collegeInfoAction" class="edu.njust.tms.action.CollegeInfoAction" scope="prototype"></bean>
+    <bean id="specialFieldInfoAction" class="edu.njust.tms.action.SpecialFieldInfoAction" scope="prototype"></bean>
+    <bean id="classInfoAction" class="edu.njust.tms.action.ClassInfoAction" scope="prototype"></bean>
+    <bean id="studentAction" class="edu.njust.tms.action.StudentAction" scope="prototype"></bean>
+    <bean id="teacherAction" class="edu.njust.tms.action.TeacherAction" scope="prototype"></bean>
+    <bean id="courseInfoAction" class="edu.njust.tms.action.CourseInfoAction" scope="prototype"></bean>
+    <bean id="studentSelectCourseInfoAction" class="edu.njust.tms.action.StudentSelectCourseInfoAction" scope="prototype"></bean>
+    <bean id="scoreInfoAction" class="edu.njust.tms.action.ScoreInfoAction" scope="prototype"></bean>
+    <bean id="newsAction" class="edu.njust.tms.action.NewsAction" scope="prototype"></bean>
+ 
+	
+	  
+</beans>

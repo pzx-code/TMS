@@ -1,0 +1,23 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="edu.njust.tms.dao">
+ <class name="News" table="t_News">
+  <!-- 主键记录编号 -->
+  <id column="newsId" name="newsId">
+   <generator class="native"/>
+  </id>
+  <!-- 简单字符串属性: 新闻标题 -->
+  <property column="newsTitle" generated="never" lazy="false"
+   length="50" name="newsTitle" type="string"/>
+  <!-- 简单字符串属性: 新闻内容 -->
+  <property column="newsContent" generated="never" lazy="false"
+   length="500" name="newsContent" type="string"/>
+  <!-- 简单日期型属性: 发布日期 -->
+  <property column="newsDate" generated="never" lazy="false" length="10"
+   name="newsDate" type="string"/>
+  <!-- 简单图片属性: 新闻图片 -->
+  <property column="newsPhoto" generated="never" lazy="false"
+   length="50" name="newsPhoto" type="string"/>
+ </class>
+</hibernate-mapping>

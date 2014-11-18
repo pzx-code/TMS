@@ -1,0 +1,41 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="edu.njust.tms.dao">
+ <class name="Teacher" table="t_Teacher">
+  <!-- 主键教师编号 -->
+  <id length="20" name="teacherNumber" type="string">
+   <generator class="assigned"/>
+  </id>
+  <!-- 简单字符串属性: 教师姓名 -->
+  <property column="teacherName" generated="never" lazy="false"
+   length="12" name="teacherName" type="string"/>
+  <!-- 简单字符串属性: 登录密码 -->
+  <property column="teacherPassword" generated="never" lazy="false"
+   length="30" name="teacherPassword" type="string"/>
+  <!-- 简单字符串属性: 性别 -->
+  <property column="teacherSex" generated="never" lazy="false"
+   length="2" name="teacherSex" type="string"/>
+  <!-- 简单日期型属性: 出生日期 -->
+  <property column="teacherBirthday" generated="never" lazy="false"
+   length="10" name="teacherBirthday" type="string"/>
+  <!-- 简单日期型属性: 入职日期 -->
+  <property column="teacherArriveDate" generated="never" lazy="false"
+   length="10" name="teacherArriveDate" type="string"/>
+  <!-- 简单字符串属性: 身份证号 -->
+  <property column="teacherCardNumber" generated="never" lazy="false"
+   length="20" name="teacherCardNumber" type="string"/>
+  <!-- 简单字符串属性: 联系电话 -->
+  <property column="teacherPhone" generated="never" lazy="false"
+   length="20" name="teacherPhone" type="string"/>
+  <!-- 简单图片属性: 教师照片 -->
+  <property column="teacherPhoto" generated="never" lazy="false"
+   length="50" name="teacherPhoto" type="string"/>
+  <!-- 简单字符串属性: 家庭地址 -->
+  <property column="teacherAddress" generated="never" lazy="false"
+   length="100" name="teacherAddress" type="string"/>
+  <!-- 简单字符串属性: 附加信息 -->
+  <property column="teacherMemo" generated="never" lazy="false"
+   length="100" name="teacherMemo" type="string"/>
+ </class>
+</hibernate-mapping>

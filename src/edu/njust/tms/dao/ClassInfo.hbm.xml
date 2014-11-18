@@ -1,0 +1,30 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="edu.njust.tms.dao">
+ <class name="ClassInfo" table="t_ClassInfo">
+  <!-- 主键班级编号 -->
+  <id length="20" name="classNumber" type="string">
+   <generator class="assigned"/>
+  </id>
+  <!-- 简单字符串属性: 班级名称 -->
+  <property column="className" generated="never" lazy="false"
+   length="20" name="className" type="string"/>
+  <!-- 多对一属性: 所属专业 -->
+  <many-to-one cascade="save-update" class="SpecialFieldInfo"
+   column="classSpecialFieldNumber" lazy="false"
+   name="classSpecialFieldNumber" outer-join="true"/>
+  <!-- 简单日期型属性: 成立日期 -->
+  <property column="classBirthDate" generated="never" lazy="false"
+   length="10" name="classBirthDate" type="string"/>
+  <!-- 简单字符串属性: 班主任 -->
+  <property column="classTeacherCharge" generated="never" lazy="false"
+   length="12" name="classTeacherCharge" type="string"/>
+  <!-- 简单字符串属性: 联系电话 -->
+  <property column="classTelephone" generated="never" lazy="false"
+   length="20" name="classTelephone" type="string"/>
+  <!-- 简单字符串属性: 附加信息 -->
+  <property column="classMemo" generated="never" lazy="false"
+   length="100" name="classMemo" type="string"/>
+ </class>
+</hibernate-mapping>

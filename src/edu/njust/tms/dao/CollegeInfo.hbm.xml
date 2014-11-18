@@ -1,0 +1,26 @@
+﻿<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+                                   "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="edu.njust.tms.dao">
+ <class name="CollegeInfo" table="t_CollegeInfo">
+  <!-- 主键学院编号 -->
+  <id length="20" name="collegeNumber" type="string">
+   <generator class="assigned"/>
+  </id>
+  <!-- 简单字符串属性: 学院名称 -->
+  <property column="collegeName" generated="never" lazy="false"
+   length="20" name="collegeName" type="string"/>
+  <!-- 简单日期型属性: 成立日期 -->
+  <property column="collegeBirthDate" generated="never" lazy="false"
+   length="10" name="collegeBirthDate" type="string"/>
+  <!-- 简单字符串属性: 院长姓名 -->
+  <property column="collegeMan" generated="never" lazy="false"
+   length="10" name="collegeMan" type="string"/>
+  <!-- 简单字符串属性: 联系电话 -->
+  <property column="collegeTelephone" generated="never" lazy="false"
+   length="20" name="collegeTelephone" type="string"/>
+  <!-- 简单字符串属性: 附加信息 -->
+  <property column="collegeMemo" generated="never" lazy="false"
+   length="100" name="collegeMemo" type="string"/>
+ </class>
+</hibernate-mapping>
